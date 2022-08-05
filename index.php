@@ -4,17 +4,10 @@ session_start();
 //importa o UsuarioController.php
 require_once 'controller/UsuarioController.php';
 require_once 'controller/ImovelController.php';
-?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>    
-</head>
-<body>
-    <?php
+//adiciona o cabeçalho
+require_once 'header.php';
+
+    
         if(isset($_SESSION['logado']) && $_SESSION['logado'] == true){
             require_once 'view/menu.php';
         
@@ -89,6 +82,4 @@ require_once 'controller/ImovelController.php';
             }
         }    
 
-    ?>    
-</body>
-</html>
+        require_once 'footer.php';

@@ -30,8 +30,8 @@
                 Listar
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">Usuário</a></li>
-                <li><a class="dropdown-item" href="#">Imóvel</a></li>
+                <li><a class="dropdown-item" href="?page=usuario&action=listar">Usuário</a></li>
+                <li><a class="dropdown-item" href="?page=imovel&action=listar">Imóvel</a></li>
             </ul>
             </li>
             <li class="nav-item">
