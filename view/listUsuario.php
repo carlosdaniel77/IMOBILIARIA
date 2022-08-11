@@ -1,13 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Lista de Usuários</title>
     <link rel="stylesheet" href="wwwroot/css/listUsuario.css"> 
-</head>
-<body>
+
     <div class="titulo">
         <h1>Usuários</h1>
         <hr>

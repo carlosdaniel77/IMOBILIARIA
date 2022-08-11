@@ -1,3 +1,7 @@
+<?php
+    require_once 'header.php';
+?>
+<link rel="stylesheet" href="wwwroot/css/style.css"> 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -23,3 +27,6 @@
     </div>
 </nav>
 
+<?php
+require_once 'footer.php';
+?>
