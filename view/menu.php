@@ -29,7 +29,7 @@
             </ul>
             </li>
             <li class="nav-item">
-            <a class="nav-link" href="principal.php">Sair</a>
+            <a class="nav-link" href="index.php">Sair</a>
             </li>
         </ul>
         </div>
