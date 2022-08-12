@@ -100,7 +100,7 @@ class Imovel extends Banco{
         if($conn = $conexao->getConection()){
             if($this->id > 0){
                 //alteração
-                $query = "update usuario set descricao = :descricao, tipo = :tipo, valor = :valor, foto = :foto where id = :id";
+                $query = "update usuario set descricao = :descricao, tipo = :tipo, valor = :valor, foto = :foto, fotoTipo = :fotoTipo where id = :id";
                 $stmt = $conn->prepare($query);
                 if($stmt->execute(array(':descricao'=>$this->descricao, ':tipo' => $this->tipo, ':valor' => $this->valor, ':foto' => $this->foto, ':id' => $this->id))){
                     $result = $stmt->rowCount();
@@ -110,7 +110,9 @@ class Imovel extends Banco{
                 //cadastro
                 $query = "insert into imovel (descricao, tipo, valor, foto) values (:descricao, :tipo, :valor, :foto)";
                 $stmt = $conn->prepare($query);
-                if($stmt->execute(array(':descricao'=>$this->descricao, ':tipo' => $this->tipo, ':valor' => $this->valor, ':foto' => $this->foto))){
+                if($stmt->execute(
+                    array(':descricao'=>$this->descricao, ':tipo' => $this->tipo, ':valor' => $this->valor, ':foto' => $this->foto))){
+                    ':fotoTipo' => $this->fotoTipo, ':id'=> $this->id))){
                     $result = $stmt->rowCount();
                 }
             }
