@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+ob_start();
 //importa o UsuarioController.php
 require_once 'controller/UsuarioController.php';
 require_once 'controller/ImovelController.php';
@@ -83,3 +83,5 @@ require_once 'header.php';
         }    
 
         require_once 'footer.php';
+
+ob_end_flush();        

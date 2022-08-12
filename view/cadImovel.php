@@ -1,15 +1,26 @@
     <link rel="stylesheet" href="wwwroot/css/cadImovel.css"> 
 
     <div class="cadastro">
-        <form name="cadImovel" id="cadImovel" action="" method="post">
+        <form name="cadImovel" id="cadImovel" action="" method="post" enctype="multipart/form-data">
                 <label>Descrição:</label> 
                 <input type="text" name="descricao" id="descricao"
                 value="<?php echo isset($imovel)?$imovel->getDescricao():''; ?>"/><br>
                 
                 <label>Foto:</label>  
-                <input type="text" name="foto" id="foto"
+                <input type="file" name="foto" id="foto"
                 value="<?php echo isset($imovel)?$imovel->getFoto():''; ?>"/><br>
-                
+                <?php
+                    if(isset($imovel) && !empty($imovel ->getFoto())){
+                ?>
+                <div class="forn-group form-row">
+                    <div class="text-center">
+                        <img class="img-thumbnail" style="width: 25%;"
+                        src="data:<?php echo $imovel->getFotoTipo();?>;base64,<?php echo base64_encode($imovel->getFoto());?>">
+                    </div>
+                </div>
+                <?php
+                    }
+                ?>
                 <label>Valor:</label>  
                 <input type="text" name="valor" id="valor"
                 value="<?php echo isset($imovel)?$imovel->getValor():''; ?>"/><br>
@@ -33,10 +44,13 @@
 if(isset($_POST['btnSalvar'])){
 
     //Chama uma função PHP que permite informar a classe e o Método que será acionado
-    call_user_func(array('ImovelController','salvar'));
+    if(isset($imovel)){
+        call_user_func(array('ImovelController','salvar'),$imovel->getFoto(),$imovel->getFotoTipo());
+    }else{
+        call_user_func(array('ImovelController','salvar'));
+    }
+    
     header('Location: index.php?action=listar');
 }
 
 ?>
-
-</html>

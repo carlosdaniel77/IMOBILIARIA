@@ -90,29 +90,33 @@ class Imovel extends Banco{
         $this->tipo = $tipo;
     }
 
-    public function save(){
-
+    public function save() {
         $result = false;
-
         //cria um objeto do tipo conexao
         $conexao = new Conexao();
         //cria a conexao com o banco de dados
         if($conn = $conexao->getConection()){
             if($this->id > 0){
-                //alteração
-                $query = "update usuario set descricao = :descricao, tipo = :tipo, valor = :valor, foto = :foto, fotoTipo = :fotoTipo where id = :id";
+                //cria query de update passando os atributos que serão atualizados
+                $query = "UPDATE imovel SET descricao = :descricao, foto = :foto, valor = :valor, tipo = :tipo, fotoTipo = :fotoTipo
+                WHERE id = :id";
+                //Prepara a query para execução
                 $stmt = $conn->prepare($query);
-                if($stmt->execute(array(':descricao'=>$this->descricao, ':tipo' => $this->tipo, ':valor' => $this->valor, ':foto' => $this->foto, ':id' => $this->id))){
+                //executa a query
+                if ($stmt->execute(
+                    array(':descricao' => $this->descricao, ':foto' => $this->foto, ':valor' => $this->valor,':tipo' => $this->tipo, 
+                    ':fotoTipo'=> $this->fotoTipo,':id'=> $this->id))){                    
                     $result = $stmt->rowCount();
                 }
-
             }else{
-                //cadastro
-                $query = "insert into imovel (descricao, tipo, valor, foto) values (:descricao, :tipo, :valor, :foto)";
+                //cria query de inserção passando os atributos que serão armazenados
+                $query = "insert into imovel (id, descricao, foto, valor, tipo, fotoTipo) 
+                values (null,:descricao,:foto,:valor,:tipo,:fotoTipo)";
+                //Prepara a query para execução
                 $stmt = $conn->prepare($query);
-                if($stmt->execute(
-                    array(':descricao'=>$this->descricao, ':tipo' => $this->tipo, ':valor' => $this->valor, ':foto' => $this->foto))){
-                    ':fotoTipo' => $this->fotoTipo, ':id'=> $this->id))){
+                //executa a query
+                if ($stmt->execute(array(':descricao' => $this->descricao, ':foto' => $this->foto, ':valor' => $this->valor,
+                ':tipo' => $this->tipo, ':fotoTipo'=> $this->fotoTipo))) {
                     $result = $stmt->rowCount();
                 }
             }
