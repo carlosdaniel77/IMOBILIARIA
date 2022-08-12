@@ -33,3 +33,26 @@ a:hover {
     color: 	#48D1CC;
     background-color: #E0FFFF;
 }
+
+div {
+    position: absolute;
+    top: 63%;
+    left: 50%;
+    transform: translate(-49%, -50%);
+    padding: 20px;
+    width: auto;
+}
+.cadastrar {
+    top: 50%;
+    left: -400%;
+    transform: translate(-30%, -50%);
+    padding: 20px;
+    width: auto;
+}
+.listar{
+    top: 50%;
+    left: -200%;
+    transform: translate(-30%, -50%);
+    padding: 20px;
+    width: auto;
+}
