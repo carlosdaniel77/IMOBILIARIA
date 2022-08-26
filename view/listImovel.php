@@ -26,7 +26,7 @@
                                 <!-- Como o retorno é um objeto, devemos chamar os gets para mostrar o resultado -->
                                 <td><?php echo $imovel->getDescricao();?></td>
                                 <td><img class="img-thumbnail" style="width: 25%;"
-                        src="data:<?php echo $imovel->getFotoTipo();?>;base64,<?php echo base64_encode($imovel->getFoto());?>"></td>
+                                src="data:<?php echo $imovel->getFotoTipo();?>;base64,<?php echo base64_encode($imovel->getFoto());?>"></td>
                                 <td><?php echo $imovel->getValor();?></td>
                                 <td><?php echo $imovel->getTipo();?></td>
                                 <td>
