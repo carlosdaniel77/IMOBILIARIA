@@ -26,7 +26,7 @@ class ImovelController{
         }
 
         //armazena as informações do $_POST via set
-        $imovel->setId($_POST['id']);
+        $imovel->setId($_POST['id'];
         $imovel->setDescricao($_POST['descricao']);
         $imovel->setValor($_POST['valor']);
         $imovel->setTipo($_POST['tipo']);
