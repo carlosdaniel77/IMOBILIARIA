@@ -2,6 +2,7 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     background-image: linear-gradient(45deg,  Azure, dodgerblue); 
 }
+
 .listacadastro {
     background-color: rgba(0, 0, 0, 0.7);
     position: absolute;
@@ -33,26 +34,48 @@ a:hover {
     color: 	#48D1CC;
     background-color: #E0FFFF;
 }
-
-div {
-    position: absolute;
-    top: 63%;
-    left: 50%;
-    transform: translate(-49%, -50%);
+.admin {
+    color: #00F;
+    background-color: dodgerblue;
+    position: relative;
+    top: 60%;
+    left: 150%;
+    transform: translate(-50%, -50%);
     padding: 20px;
-    width: auto;
+    width: 35%;
+    margin-top: 40px;
+    border-radius: 30px;
 }
+
 .cadastrar {
+    position: relative;
     top: 50%;
-    left: -400%;
+    left: 145%;
     transform: translate(-30%, -50%);
     padding: 20px;
     width: auto;
+    margin-top: 40px
 }
 .listar{
+    position: relative;
     top: 50%;
-    left: -200%;
+    left: 135%;
     transform: translate(-30%, -50%);
     padding: 20px;
     width: auto;
+    margin-top: 40px
+}
+
+.sair{
+    position: relative;
+    top: 63%;
+    left: 130%;
+    transform: translate(-49%, -50%);
+    padding: 20px;
+    width: auto; 
+    margin-top: 40px
+}
+nav.navbar {
+    background-image: linear-gradient(45deg,  Azure, dodgerblue) !important; 
+
 }

@@ -31,6 +31,7 @@
                         <option value="1" <?php echo isset($imovel) && $imovel->getTipo() == 'Apartamento'?'selected':''; ?>>Apartamento</option>
                         <option value="2" <?php echo isset($imovel) && $imovel->getTipo() == 'Casa'?'selected':''; ?>>Casa</option>
                 </select><br><br>
+                <input type="hidden" name="id" id="id" value="<?php echo isset($imovel)?$imovel->getId():''; ?>" />
                 <button name="btnReset" id="btnReset" value="Reset">Reset</button>  
                 <button name="btnSalvar" id="btnSalvar" value="Enviar">Enviar</button>    
             </form>

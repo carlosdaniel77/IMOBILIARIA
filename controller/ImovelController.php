@@ -5,7 +5,7 @@ class ImovelController{
     /**
      * Salvar o imóvel submetido pelo formulário
      */
-    public static function salvar($fotoAtual="",$fotoTipo=""){
+    public static function salvar($fotoAtual='',$fotoTipo=''){
         //cria um objeto do tipo Imóvel
         $imovel = new Imovel;
         
@@ -28,7 +28,6 @@ class ImovelController{
         //armazena as informações do $_POST via set
         $imovel->setId($_POST['id']);
         $imovel->setDescricao($_POST['descricao']);
-        $imovel->setFoto($_POST['foto']);
         $imovel->setValor($_POST['valor']);
         $imovel->setTipo($_POST['tipo']);
 
