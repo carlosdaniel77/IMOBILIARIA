@@ -15,7 +15,7 @@
                 <div class="forn-group form-row">
                     <div class="text-center">
                         <img class="img-thumbnail" style="width: 25%;"
-                        src="data:<?php echo $imovel->getFotoTipo();?>;base64,<?php echo base64_encode($imovel->getFoto());?>">
+                        src="<?php echo $imovel->getFotoTipo();?>;base64,<?php echo base64_encode($imovel->getFoto());?><?php echo $imovel->getPath();?>">
                     </div>
                 </div>
                 <?php
@@ -32,6 +32,7 @@
                         <option value="2" <?php echo isset($imovel) && $imovel->getTipo() == 'Casa'?'selected':''; ?>>Casa</option>
                 </select><br><br>
                 <input type="hidden" name="id" id="id" value="<?php echo isset($imovel)?$imovel->getId():''; ?>" />
+                <input type="hidden" name="path" id="path" value="<?php echo isset($imovel)?$imovel->getPath():''; ?>" />
                 <button name="btnReset" id="btnReset" value="Reset">Reset</button>  
                 <button name="btnSalvar" id="btnSalvar" value="Enviar">Enviar</button>    
             </form>
