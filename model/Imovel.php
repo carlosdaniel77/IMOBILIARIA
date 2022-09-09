@@ -12,6 +12,7 @@ class Imovel extends Banco{
     private $valor;
     private $fotoTipo;
     private $path;
+    private $galeria;
 
     //métodos de acesso
 
