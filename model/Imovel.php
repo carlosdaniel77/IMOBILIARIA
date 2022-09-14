@@ -72,6 +72,14 @@ class Imovel extends Banco{
         $this->path = $path;
     }
 
+    public function getGaleria(){
+        return $this->galeria;
+    }
+
+    public function setGaleria($galeria){
+        $this->galeria = $galeria;
+    }
+
 
 
     public function save() {

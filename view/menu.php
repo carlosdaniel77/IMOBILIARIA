@@ -35,16 +35,13 @@
             </div>
             <div class="sair">
                 <li class="nav-item">
-                <a class="nav-link" href="index.php">Sair</a>
+                <a class="nav-link" id="btnSair" name="btnSair" href="sair.php">Sair</a>
                 </li>
             </div>
         </ul>
         </div>
     </div>
     </nav>
-</body>
-</html>
-
 <?php
 require_once 'footer.php';
 ?>

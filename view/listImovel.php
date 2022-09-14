@@ -32,7 +32,7 @@
                                 <td>
                                     <button><a href="index.php?page=imovel&action=editar&id=<?php echo $imovel->getId(); ?>">Editar</a></button>
                                     <button><a href="index.php?page=imovel&action=excluir&id=<?php echo $imovel->getId(); ?>">Excluir</a></button>
-                                    <button><a href="index.php?page=imovel&action=galeria&id=<?php echo $imovel->getId(); ?>">Galeria</a></button>
+                                    <button><a href="index.php?page=imovel&action=addimagem&id=<?php echo $imovel->getId(); ?>">Galeria</a></button>
                                     
                                 </td>
                             </tr>

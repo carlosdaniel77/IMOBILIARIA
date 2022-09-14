@@ -29,6 +29,11 @@ require_once 'header.php';
                             require_once 'view/listUsuario.php';
                     
                         }
+                        if($_GET['action'] == 'sair'){
+                            $usuario = call_user_func(array('UsuarioController','sair'));
+                            require_once 'index.php';
+                    
+                        }
                     }else{
                         require_once 'view/cadUsuario.php';
                     }
@@ -49,7 +54,7 @@ require_once 'header.php';
                             $usuario = call_user_func(array('ImovelController','editar'),$_GET['id']);
                             require_once 'view/cadImovel.php';
                         }
-                    
+
                         if($_GET['action'] == 'listar'){
                             require_once 'view/listImovel.php';
                         }
@@ -59,6 +64,12 @@ require_once 'header.php';
                             require_once 'view/listImovel.php';
                     
                         }
+
+                        if($_GET['action'] == 'addimagem')
+                        {
+                            require_once 'view/AddImagem.php';                    
+                        }
+
                     }else{
                         require_once 'view/cadImovel.php';
                     }
