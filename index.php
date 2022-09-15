@@ -4,6 +4,7 @@ ob_start();
 //importa o UsuarioController.php
 require_once 'controller/UsuarioController.php';
 require_once 'controller/ImovelController.php';
+require_once 'controller/GaleriaController.php';
 //adiciona o cabeçalho
 require_once 'header.php';
 
@@ -69,8 +70,14 @@ require_once 'header.php';
                         {
                             require_once 'view/AddImagem.php';                    
                         }
-
-                    }else{
+                        
+                        if($_GET['action'] == 'excluir')
+                        {
+                            $imovel = call_user_func(array('GaleriaController','excluir'),$_GET['id']);
+                            require_once 'View/AddImagem.php';
+                        }
+                    }
+                    else{
                         require_once 'view/cadImovel.php';
                     }
                     
