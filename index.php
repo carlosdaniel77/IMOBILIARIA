@@ -71,7 +71,7 @@ require_once 'header.php';
                             require_once 'view/AddImagem.php';                    
                         }
                         
-                        if($_GET['action'] == 'excluir')
+                        if($_GET['action'] == 'excluirFoto')
                         {
                             $imovel = call_user_func(array('GaleriaController','excluir'),$_GET['id']);
                             require_once 'View/AddImagem.php';

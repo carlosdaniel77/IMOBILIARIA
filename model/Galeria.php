@@ -29,7 +29,7 @@ class Galeria extends Banco
         $this->idImovel = $idImovel;
     }
 
-    public function getFoto(){
+   public function getFoto(){
         return $this->foto;
     }
 
@@ -54,6 +54,7 @@ class Galeria extends Banco
     }
 
     public function save() {
+    
         $result = false;
         //cria um objeto do tipo conexao
         $conexao = new Conexao();
@@ -67,19 +68,19 @@ class Galeria extends Banco
                 $stmt = $conn->prepare($query);
                 //executa a query
                 if ($stmt->execute(
-                    array(':idImovel' => $this->idImovel, ':foto' => $this->foto,':id'=> $this->id, 
-                    ':fotoTipo' => $this->fotoTipo, ':path' => $this ->path))){
+                    array(':id'=> $this->id, ':idImovel' => $this->idImovel, ':foto' => $this->foto, 
+                    ':fotoTipo' => $this->fotoTipo, ':path' => $this->path))){
                     $result = $stmt->rowCount();
                 }
             }else{
                 //cria query de inserção passando os atributos que serão armazenados
-                $query = "insert into imovel (id, idImovel, foto, fotoTipo, path) 
+                $query = "insert into galeria (id, idImovel, foto, fotoTipo, path) 
                 values (null,:idImovel,:foto,:fotoTipo,:path)";
                 //Prepara a query para execução
                 $stmt = $conn->prepare($query);
                 //executa a query
-                if ($stmt->execute(array(':idImovel' => $this->idImovel, ':foto' => $this->foto,':id'=> $this->id, 
-                ':fotoTipo' => $this->fotoTipo, ':path' => $this ->path))){
+                if ($stmt->execute(array(':idImovel' => $this->idImovel, ':foto' => $this->foto, 
+                ':fotoTipo' => $this->fotoTipo, ':path' => $this->path))){
                     $result = $stmt->rowCount();
                 }
             }
@@ -89,19 +90,18 @@ class Galeria extends Banco
 
     public function remove($id){
         $result = false;
-
+        //cria um objeto do tipo conexao
         $conexao = new Conexao();
-
+        //cria a conexao com o banco de dados
         $conn = $conexao->getConection();
-
+        //cria query de remoção
         $query = "DELETE FROM GALERIA WHERE id = :id";
-
+         //Prepara a query para execução
         $stmt = $conn->prepare($query);
-
+        //executa a query
         if($stmt->execute(array(':id'=>$id))){
             $result = true;
         }
-
         return $result;
     }
 
@@ -126,7 +126,7 @@ class Galeria extends Banco
         $result = array();
 
         //executa a query
-        if($stmt->execute(array(':id_imovel' => $idImovel)))
+        if($stmt->execute(array(':idImovel'=>$idImovel)))
         {
             //o resultado da busca será retornado como um objeto da classe 
            while ($rs = $stmt->fetchObject(Galeria::class))
